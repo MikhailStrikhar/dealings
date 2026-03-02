@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<DataProcessor uuid="ccc1cf1c-19f8-436e-9280-6173bbbda353">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.ЗаполнитьUID_ДляИнструментовБезUID" category="Object">
+				<xr:TypeId>06b42a23-93a0-4875-a39b-0ab6d69865ba</xr:TypeId>
+				<xr:ValueId>72dad51c-ed10-4b07-aee8-7a9ecc2b7541</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.ЗаполнитьUID_ДляИнструментовБезUID" category="Manager">
+				<xr:TypeId>253ce997-2d99-4624-9d60-cce7e82cec30</xr:TypeId>
+				<xr:ValueId>6d52ff20-3245-4909-a1b3-ed0d3bc66957</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ЗаполнитьUID_ДляИнструментовБезUID</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить UID для инструментов без UID</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm>DataProcessor.ЗаполнитьUID_ДляИнструментовБезUID.Form.Форма</DefaultForm>
+			<AuxiliaryForm/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+			<Command uuid="45e74870-17e2-4f07-b9ba-8912ee115623">
+				<Properties>
+					<Name>Команда1</Name>
+					<Synonym/>
+					<Comment/>
+					<Group>NavigationPanelOrdinary</Group>
+					<CommandParameterType/>
+					<ParameterUseMode>Single</ParameterUseMode>
+					<ModifiesData>false</ModifiesData>
+					<Representation>Auto</Representation>
+					<ToolTip/>
+					<Picture/>
+					<Shortcut/>
+					<OnMainServerUnavalableBehavior>Auto</OnMainServerUnavalableBehavior>
+				</Properties>
+			</Command>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>

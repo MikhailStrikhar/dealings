@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Запрос</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<role>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтратегияСделки</dataPath>
+			<field>СтратегияСделки</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Портфель</dataPath>
+			<field>Портфель</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СебестоимостьОборот</dataPath>
+			<field>СебестоимостьОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Инструмент</dataPath>
+			<field>Инструмент</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КомиссияОборот</dataPath>
+			<field>КомиссияОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыручкаОборот</dataPath>
+			<field>ВыручкаОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПрибыльУбытокОборот</dataPath>
+			<field>ПрибыльУбытокОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PnLПлюс</dataPath>
+			<field>PnLПлюс</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Pn l плюс</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>PnLМинус</dataPath>
+			<field>PnLМинус</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Pn l минус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ФинансовыеРезультатыПоСделкамОбороты.Период КАК Период,
+	ФинансовыеРезультатыПоСделкамОбороты.Регистратор КАК Регистратор,
+	ФинансовыеРезультатыПоСделкамОбороты.Портфель КАК Портфель,
+	ФинансовыеРезультатыПоСделкамОбороты.Инструмент КАК Инструмент,
+	ФинансовыеРезультатыПоСделкамОбороты.СтратегияСделки КАК СтратегияСделки,
+	ФинансовыеРезультатыПоСделкамОбороты.ВыручкаОборот КАК ВыручкаОборот,
+	ФинансовыеРезультатыПоСделкамОбороты.СебестоимостьОборот КАК СебестоимостьОборот,
+	ФинансовыеРезультатыПоСделкамОбороты.КомиссияОборот КАК КомиссияОборот,
+	ФинансовыеРезультатыПоСделкамОбороты.ПрибыльУбытокОборот КАК ПрибыльУбытокОборот,
+	ВЫБОР
+		КОГДА ФинансовыеРезультатыПоСделкамОбороты.ПрибыльУбытокОборот &gt; 0
+			ТОГДА ФинансовыеРезультатыПоСделкамОбороты.ПрибыльУбытокОборот
+		ИНАЧЕ 0
+	КОНЕЦ КАК PnLПлюс,
+	ВЫБОР
+		КОГДА ФинансовыеРезультатыПоСделкамОбороты.ПрибыльУбытокОборот &lt; 0
+			ТОГДА -ФинансовыеРезультатыПоСделкамОбороты.ПрибыльУбытокОборот
+		ИНАЧЕ 0
+	КОНЕЦ КАК PnLМинус
+ИЗ
+	РегистрНакопления.ФинансовыеРезультатыПоСделкам.Обороты(, , Регистратор, {(Портфель = &amp;Портфель)}) КАК ФинансовыеРезультатыПоСделкамОбороты</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>PnLИтого</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>PnL итого</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КоличествоСделок</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Количество сделок</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>PnLСредний</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>PnL cредний</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>PnLПоложительный</dataPath>
+		<expression>ВЫБОР
+		КОГДА ПрибыльУбытокОборот &gt; 0
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>PnL положительный</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>PnLОтрицательный</dataPath>
+		<expression>ВЫБОР
+		КОГДА ПрибыльУбытокОборот &lt; 0
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>PnL отрицательный</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПрибыльныхСделок</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Прибыльных сделок</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>УбыточныхСделок</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Убыточных сделок</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>КомиссияИтого</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Комиссия итого</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПроцентПрибыльных</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Процент прибыльных</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=0</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ПрибыльСумма</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Прибыль сумма</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>УбытокСумма</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Убыток сумма</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<totalField>
+		<dataPath>КоличествоСделок</dataPath>
+		<expression>Количество(Регистратор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>PnLСредний</dataPath>
+		<expression>Сумма(ПрибыльУбытокОборот)/Количество(Регистратор)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>PnLИтого</dataPath>
+		<expression>Сумма(ПрибыльУбытокОборот)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрибыльныхСделок</dataPath>
+		<expression>Сумма(PnLПоложительный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УбыточныхСделок</dataPath>
+		<expression>Сумма(PnLОтрицательный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КомиссияИтого</dataPath>
+		<expression>Сумма(КомиссияОборот)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПроцентПрибыльных</dataPath>
+		<expression>ВЫБОР
+    КОГДА Количество(Регистратор) = 0 ТОГДА 0
+    ИНАЧЕ (Сумма(PnLПоложительный) / Количество(Регистратор)) * 100
+КОНЕЦ</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрибыльСумма</dataPath>
+		<expression>Сумма(PnLПлюс)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>УбытокСумма</dataPath>
+		<expression>Сумма(PnLМинус)</expression>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Портфель</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Портфель</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СтратегияСделки</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоСделок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрибыльныхСделок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УбыточныхСделок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PnLИтого</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>PnLСредний</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КомиссияИтого</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрибыльСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УбытокСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПроцентПрибыльных</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Портфель</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ПроцентПрибыльных</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СтратегияСделки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

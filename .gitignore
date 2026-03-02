@@ -1,0 +1,6 @@
+*.log
+*.cf
+*.cfe
+*.tmp
+*.bak
+.vscode/

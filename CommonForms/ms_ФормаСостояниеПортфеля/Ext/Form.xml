@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="СтоимостьПортфеля" id="1">
+			<DataPath>СтоимостьПортфеля</DataPath>
+			<MaxWidth>1</MaxWidth>
+			<Height>2</Height>
+			<Hiperlink>true</Hiperlink>
+			<TextColor>style:FieldSelectionBackColor</TextColor>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="СтоимостьПортфеляКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="СтоимостьПортфеляРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="Click">СтоимостьПортфеляНажатие</Event>
+			</Events>
+		</LabelField>
+		<LabelField name="РеализованныйPnLЗаМесяц" id="4">
+			<DataPath>РеализованныйPnLЗаМесяц</DataPath>
+			<MaxWidth>1</MaxWidth>
+			<Height>2</Height>
+			<Hiperlink>true</Hiperlink>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="РеализованныйPnLЗаМесяцКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="РеализованныйPnLЗаМесяцРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="Click">РеализованныйPnLЗаМесяцНажатие</Event>
+			</Events>
+		</LabelField>
+		<LabelField name="РеализованныйPnLСначалаГода" id="7">
+			<DataPath>РеализованныйPnLСначалаГода</DataPath>
+			<MaxWidth>1</MaxWidth>
+			<Height>2</Height>
+			<Hiperlink>true</Hiperlink>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="РеализованныйPnLСначалаГодаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="РеализованныйPnLСначалаГодаРасширеннаяПодсказка" id="9"/>
+			<Events>
+				<Event name="Click">РеализованныйPnLСначалаГодаНажатие</Event>
+			</Events>
+		</LabelField>
+		<LabelField name="НереализованныйPnL" id="14">
+			<DataPath>НереализованныйPnL</DataPath>
+			<MaxWidth>1</MaxWidth>
+			<Height>2</Height>
+			<Hiperlink>true</Hiperlink>
+			<TextColor>style:FieldSelectionBackColor</TextColor>
+			<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+			<ContextMenu name="НереализованныйPnLКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="НереализованныйPnLРасширеннаяПодсказка" id="16"/>
+			<Events>
+				<Event name="Click">НереализованныйPnLНажатие</Event>
+			</Events>
+		</LabelField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СтоимостьПортфеля" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая стоимость портфеля</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РеализованныйPnLЗаМесяц" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реализованный PnL за месяц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РеализованныйPnLСначалаГода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реализованный PnL с начала года</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НереализованныйPnL" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Нереализованный PnL</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РеализованныйPnLЗаМесяц</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РеализованныйPnLЗаМесяц</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаПоложительногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РеализованныйPnLЗаМесяц</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РеализованныйPnLЗаМесяц</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаОтрицательногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РеализованныйPnLСначалаГода</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РеализованныйPnLСначалаГода</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаПоложительногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>РеализованныйPnLСначалаГода</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">РеализованныйPnLСначалаГода</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаОтрицательногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НереализованныйPnL</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НереализованныйPnL</dcsset:left>
+						<dcsset:comparisonType>Greater</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаПоложительногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НереализованныйPnL</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НереализованныйPnL</dcsset:left>
+						<dcsset:comparisonType>Less</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ЦветТекста</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:ЦветТекстаОтрицательногоЗначения</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+</Form>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Report uuid="20b7bc58-29ee-48ad-94bd-97656ab60052">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.Портфель" category="Object">
+				<xr:TypeId>00806fef-50e6-4c78-ac79-0b7f9099d939</xr:TypeId>
+				<xr:ValueId>55ccf691-80f0-4ee8-b689-db21c2568911</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="ReportManager.Портфель" category="Manager">
+				<xr:TypeId>4cf833bb-4f5e-4123-ad2a-791b094764e8</xr:TypeId>
+				<xr:ValueId>491ae2fa-c297-4453-8575-a0503dd2a871</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Портфель</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Портфель</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm>CommonForm.ФормаОтчета</DefaultForm>
+			<AuxiliaryForm/>
+			<MainDataCompositionSchema>Report.Портфель.Template.ОсновнаяСхемаКомпоновкиДанных</MainDataCompositionSchema>
+			<DefaultSettingsForm>CommonForm.ФормаНастроекОтчета</DefaultSettingsForm>
+			<AuxiliarySettingsForm/>
+			<DefaultVariantForm>CommonForm.ФормаВариантаОтчета</DefaultVariantForm>
+			<VariantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</VariantsStorage>
+			<SettingsStorage>SettingsStorage.ХранилищеВариантовОтчетов</SettingsStorage>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Template>ОсновнаяСхемаКомпоновкиДанных</Template>
+		</ChildObjects>
+	</Report>
+</MetaDataObject>
