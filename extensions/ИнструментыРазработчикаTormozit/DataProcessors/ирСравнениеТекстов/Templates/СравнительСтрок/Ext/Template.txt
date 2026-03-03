@@ -1,0 +1,375 @@
+﻿<html lang="ru">
+<!-- для выполнения в Webkit 605 внутри поля HTML формы платформы 1С -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение строк</title>
+    <style>
+        html, body {
+            width: 100vw;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
+            background-color: white;
+            font-family: "Lucida Console", 'Courier New', monospace; 
+        }
+        
+        .comparison {
+            display: block; 
+            width: 100%;
+            overflow-x: auto; 
+            padding-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        .comparison::-webkit-scrollbar {
+            height: 8px; 
+            width: 8px;
+        }
+        
+        .comparison::-webkit-scrollbar-thumb {
+            background-color: #a0a0a0;
+            border-radius: 4px;
+        }
+        
+        .comparison::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+        
+        .text-row {
+            display: flex;
+            align-items: flex-start;
+            min-height: 15px;
+            width: -webkit-max-content; 
+            width: max-content;
+            min-width: 100%; 
+            margin-bottom: 2px; 
+        }
+        
+        .text-content {
+            white-space: pre;
+            /* ОБНОВЛЕНО: Размер и высота строки */
+            font-size: 13px; 
+            line-height: 15px; /* Теперь фиксировано 15px */
+        }
+        
+        .diff-delete {
+            background-color: #ffe0e0;
+            color: #c62828;
+        }
+        
+        .diff-insert {
+            background-color: #d8ffd8;
+            color: #2e7d32;
+        }
+        
+        .diff-space {
+            background-color: #e0e0ff;
+            color: #1565c0;
+        }
+        
+        .char-cell {
+            display: inline-block;
+            min-width: 6px;
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison" id="comparisonResult"></div>
+    <script>
+        function setText(text1, text2, IgnoreBoundaryWhitespace = true) {
+            const comparisonResult = document.getElementById('comparisonResult');
+            comparisonResult.innerHTML = '';
+            
+            let processedText1 = text1;
+            let processedText2 = text2;
+            
+            if (IgnoreBoundaryWhitespace) {
+                processedText1 = text1.trim();
+                processedText2 = text2.trim();
+            }
+            
+            if (processedText1 === processedText2) {
+                addTextRow(processedText1, 'common');
+                addTextRow(processedText2, 'common');
+                return;
+            }
+            
+            const diff = computeHybridDiff(processedText1, processedText2);
+            const aligned = alignStrings(diff);
+            addTextRow(aligned.str1, 'diff', aligned.types1);
+            addTextRow(aligned.str2, 'diff', aligned.types2);
+
+            // После добавления строк в DOM прокручиваем к первому различию
+            setTimeout(() => scrollToFirstDiff(), 0);
+        }
+        
+        function addTextRow(text, type, types = null) {
+            const row = document.createElement('div');
+            row.className = 'text-row';
+            
+            const textContent = document.createElement('div');
+            textContent.className = 'text-content';
+            
+            if (type === 'common') {
+                textContent.innerHTML = escapeHtml(text);
+            } else {
+                textContent.innerHTML = formatAlignedText(text, types);
+            }
+            
+            row.appendChild(textContent);
+            document.getElementById('comparisonResult').appendChild(row);
+        }
+        
+        function formatAlignedText(text, types) {
+            let html = '';
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const type = types[i];
+                
+                let spanClass = '';
+                if (type === 'delete') spanClass = 'diff-delete';
+                else if (type === 'insert') spanClass = 'diff-insert';
+                else if (type === 'space') spanClass = 'diff-space';
+                
+                if (spanClass) {
+                    html += `<span class="${spanClass} char-cell">${escapeHtml(char)}</span>`;
+                } else {
+                    html += `<span class="char-cell">${escapeHtml(char)}</span>`;
+                }
+            }
+            return html;
+        }
+        
+        function alignStrings(diff) {
+            let str1 = '';
+            let str2 = '';
+            let types1 = [];
+            let types2 = [];
+            
+            for (const operation of diff) {
+                if (operation.type === 'common') {
+                    for (let i = 0; i < operation.text.length; i++) {
+                        str1 += operation.text[i];
+                        str2 += operation.text[i];
+                        types1.push('common');
+                        types2.push('common');
+                    }
+                } else if (operation.type === 'delete') {
+                    for (let i = 0; i < operation.text.length; i++) {
+                        str1 += operation.text[i];
+                        str2 += ' ';
+                        types1.push('delete');
+                        types2.push('space');
+                    }
+                } else if (operation.type === 'insert') {
+                    for (let i = 0; i < operation.text.length; i++) {
+                        str1 += ' ';
+                        str2 += operation.text[i];
+                        types1.push('space');
+                        types2.push('insert');
+                    }
+                } else if (operation.type === 'replace') {
+                    const subDiff = computeCharDiff(operation.text1, operation.text2);
+                    for (const subOp of subDiff) {
+                        if (subOp.type === 'common') {
+                            str1 += subOp.char;
+                            str2 += subOp.char;
+                            types1.push('common');
+                            types2.push('common');
+                        } else if (subOp.type === 'delete') {
+                            str1 += subOp.char;
+                            str2 += ' ';
+                            types1.push('delete');
+                            types2.push('space');
+                        } else if (subOp.type === 'insert') {
+                            str1 += ' ';
+                            str2 += subOp.char;
+                            types1.push('space');
+                            types2.push('insert');
+                        } else if (subOp.type === 'replace') {
+                            str1 += subOp.char1;
+                            str2 += subOp.char2;
+                            types1.push('delete');
+                            types2.push('insert');
+                        }
+                    }
+                }
+            }
+            return { str1, str2, types1, types2 };
+        }
+        
+        function computeHybridDiff(str1, str2) {
+            if (str1 === str2) return [{ type: 'common', text: str1 }];
+            
+            const commonSubstrings = findLongestCommonSubstrings(str1, str2);
+            if (commonSubstrings.length === 0) {
+                return [{ type: 'replace', text1: str1, text2: str2 }];
+            }
+            
+            let result = [];
+            let pos1 = 0, pos2 = 0;
+            
+            for (const cs of commonSubstrings) {
+                if (cs.start1 > pos1 || cs.start2 > pos2) {
+                    const before1 = str1.substring(pos1, cs.start1);
+                    const before2 = str2.substring(pos2, cs.start2);
+                    
+                    if (before1 && before2) {
+                        result.push({ type: 'replace', text1: before1, text2: before2 });
+                    } else if (before1) {
+                        result.push({ type: 'delete', text: before1 });
+                    } else if (before2) {
+                        result.push({ type: 'insert', text: before2 });
+                    }
+                }
+                result.push({ type: 'common', text: cs.text });
+                pos1 = cs.start1 + cs.text.length;
+                pos2 = cs.start2 + cs.text.length;
+            }
+            
+            if (pos1 < str1.length || pos2 < str2.length) {
+                const after1 = str1.substring(pos1);
+                const after2 = str2.substring(pos2);
+                if (after1 && after2) result.push({ type: 'replace', text1: after1, text2: after2 });
+                else if (after1) result.push({ type: 'delete', text: after1 });
+                else if (after2) result.push({ type: 'insert', text: after2 });
+            }
+            
+            return result;
+        }
+        
+        function findLongestCommonSubstrings(str1, str2) {
+            const m = str1.length;
+            const n = str2.length;
+            if (m === 0 || n === 0) return [];
+            
+            const dp = Array(m + 1).fill().map(() => Array(n + 1).fill(0));
+            let maxLength = 0;
+            const endings = [];
+            
+            for (let i = 1; i <= m; i++) {
+                for (let j = 1; j <= n; j++) {
+                    if (str1[i-1] === str2[j-1]) {
+                        dp[i][j] = dp[i-1][j-1] + 1;
+                        if (dp[i][j] > maxLength) {
+                            maxLength = dp[i][j];
+                            endings.length = 0;
+                            endings.push({ i, j });
+                        } else if (dp[i][j] === maxLength && maxLength > 0) {
+                            endings.push({ i, j });
+                        }
+                    }
+                }
+            }
+            
+            if (maxLength < 3) {
+                maxLength = 0;
+                endings.length = 0;
+                for (let i = 1; i <= m; i++) {
+                    for (let j = 1; j <= n; j++) {
+                        if (str1[i-1] === str2[j-1]) {
+                            dp[i][j] = dp[i-1][j-1] + 1;
+                            if (dp[i][j] >= 3) {
+                                if (dp[i][j] > maxLength) {
+                                    maxLength = dp[i][j];
+                                    endings.length = 0;
+                                    endings.push({ i, j });
+                                } else if (dp[i][j] === maxLength) {
+                                    endings.push({ i, j });
+                                }
+                            }
+                        } else dp[i][j] = 0;
+                    }
+                }
+            }
+            
+            if (maxLength === 0) return [];
+            
+            const substrings = [];
+            for (const end of endings) {
+                const i = end.i;
+                const j = end.j;
+                const start1 = i - maxLength;
+                const start2 = j - maxLength;
+                const text = str1.substring(start1, i);
+                
+                let isOverlapping = false;
+                for (const sub of substrings) {
+                    if (!(start1 >= sub.start1 + sub.text.length || 
+                          start1 + text.length <= sub.start1 ||
+                          start2 >= sub.start2 + sub.text.length || 
+                          start2 + text.length <= sub.start2)) {
+                        isOverlapping = true;
+                        break;
+                    }
+                }
+                
+                if (!isOverlapping) {
+                    substrings.push({ text, start1, start2, length: maxLength });
+                }
+            }
+            substrings.sort((a, b) => a.start1 - b.start1);
+            return substrings;
+        }
+        
+        function computeCharDiff(str1, str2) {
+            const m = str1.length;
+            const n = str2.length;
+            const dp = Array(m + 1).fill().map(() => Array(n + 1).fill(0));
+            
+            for (let i = 0; i <= m; i++) {
+                for (let j = 0; j <= n; j++) {
+                    if (i === 0) dp[i][j] = j;
+                    else if (j === 0) dp[i][j] = i;
+                    else if (str1[i - 1] === str2[j - 1]) dp[i][j] = dp[i - 1][j - 1];
+                    else dp[i][j] = 1 + Math.min(dp[i][j - 1], dp[i - 1][j], dp[i - 1][j - 1]);
+                }
+            }
+            
+            const diff = [];
+            let i = m, j = n;
+            while (i > 0 || j > 0) {
+                if (i > 0 && j > 0 && str1[i - 1] === str2[j - 1]) {
+                    diff.unshift({ type: 'common', char: str1[i - 1] });
+                    i--; j--;
+                } else {
+                    if (j > 0 && (i === 0 || dp[i][j - 1] <= dp[i - 1][j] && dp[i][j - 1] <= dp[i - 1][j - 1])) {
+                        diff.unshift({ type: 'insert', char: str2[j - 1] });
+                        j--;
+                    } else if (i > 0 && (j === 0 || dp[i - 1][j] <= dp[i][j - 1] && dp[i - 1][j] <= dp[i - 1][j - 1])) {
+                        diff.unshift({ type: 'delete', char: str1[i - 1] });
+                        i--;
+                    } else {
+                        diff.unshift({ type: 'replace', char1: str1[i - 1], char2: str2[j - 1] });
+                        i--; j--;
+                    }
+                }
+            }
+            return diff;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // НОВАЯ ФУНКЦИЯ: Прокрутка к первому различию
+        function scrollToFirstDiff() {
+            const container = document.getElementById('comparisonResult');
+            // Находим первый элемент с классом различия
+            const firstDiff = container.querySelector('.diff-delete, .diff-insert, .diff-space');
+            if (firstDiff) {
+                // Прокручиваем контейнер так, чтобы элемент был видим
+                firstDiff.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
+            }
+        }
+        
+        window.setText = setText;
+    </script>
+</body>
+</html>
