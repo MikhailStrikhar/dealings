@@ -257,7 +257,7 @@
 			<Subsystem>Администрирование</Subsystem>
 			<Subsystem>ПодключаемыеОтчетыИОбработки</Subsystem>
 			<Subsystem>СтандартныеПодсистемы</Subsystem>
-			<Subsystem>Сделки</Subsystem>
+			<Subsystem>Операции</Subsystem>
 			<StyleItem>ВажнаяНадписьШрифт</StyleItem>
 			<StyleItem>ГиперссылкаЦвет</StyleItem>
 			<StyleItem>ГруппаВариантовОтчетовВажнаяШрифт</StyleItem>
@@ -880,6 +880,8 @@
 			<CommonModule>ФизическиеЛицаКлиентСервер</CommonModule>
 			<CommonModule>ФизическиеЛицаКлиентСерверЛокализация</CommonModule>
 			<CommonModule>ЯндексПереводчик</CommonModule>
+			<CommonModule>ИнструментыБрокера</CommonModule>
+			<CommonModule>ДФИ</CommonModule>
 			<CommonAttribute>КомментарийЯзык1</CommonAttribute>
 			<CommonAttribute>КомментарийЯзык2</CommonAttribute>
 			<CommonAttribute>НаименованиеЯзык1</CommonAttribute>
@@ -961,6 +963,7 @@
 			<CommonCommand>СоздатьЗаметкуПоПредмету</CommonCommand>
 			<CommonCommand>УстановитьРасширениеДляРаботыС1СПредприятием</CommonCommand>
 			<CommonCommand>ms_ПолучитьПоследниеЦены</CommonCommand>
+			<CommonCommand>ms_ЗагрузитьОперации</CommonCommand>
 			<CommandGroup>Информация</CommandGroup>
 			<CommandGroup>Органайзер</CommandGroup>
 			<CommandGroup>Печать</CommandGroup>
@@ -1132,6 +1135,7 @@
 			<DataProcessor>РезультатыОбновленияПрограммы</DataProcessor>
 			<DataProcessor>РекомендацияПоПовышениюСкоростиРаботы</DataProcessor>
 			<DataProcessor>ЗаполнитьUID_ДляИнструментовБезUID</DataProcessor>
+			<DataProcessor>ms_ЗагрузкаОпераций</DataProcessor>
 			<InformationRegister>БезопасноеХранилищеДанных</InformationRegister>
 			<InformationRegister>БезопасноеХранилищеДанныхОбластейДанных</InformationRegister>
 			<InformationRegister>ВерсииПодсистем</InformationRegister>

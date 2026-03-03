@@ -191,11 +191,11 @@
 			</Resource>
 			<Dimension uuid="c455776a-19ac-481a-9a52-fd964f27b8c7">
 				<Properties>
-					<Name>Портфель</Name>
+					<Name>Счет</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Портфель</v8:content>
+							<v8:content>Счет</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

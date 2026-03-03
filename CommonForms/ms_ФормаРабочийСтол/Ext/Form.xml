@@ -61,6 +61,11 @@
 						<CommandName>Form.Command.ПолучитьПортфельПоСчетам</CommandName>
 						<ExtendedTooltip name="ФормаПолучитьПортфельРасширеннаяПодсказка" id="22"/>
 					</Button>
+					<Button name="ФормаОбщаяКомандаms_ЗагрузитьОперации" id="23">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.ms_ЗагрузитьОперации</CommandName>
+						<ExtendedTooltip name="ФормаОбщаяКомандаms_ЗагрузитьОперацииРасширеннаяПодсказка" id="24"/>
+					</Button>
 				</ChildItems>
 			</Popup>
 		</ChildItems>

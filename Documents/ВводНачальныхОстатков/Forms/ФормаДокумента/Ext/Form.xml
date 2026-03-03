@@ -62,6 +62,11 @@
 					</ButtonGroup>
 				</ChildItems>
 			</Popup>
+			<Button name="ФормаЗаполнитьПоДаннымИмпорта" id="87">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьПоДаннымИмпорта</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьПоДаннымИмпортаРасширеннаяПодсказка" id="88"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -109,18 +114,18 @@
 			</ChildItems>
 		</UsualGroup>
 		<RadioButtonField name="ВидСделки" id="10">
-			<DataPath>Объект.ВидСделки</DataPath>
+			<DataPath>1/0:fe59900a-b0f9-4246-85f9-dbb1cf89bb8b</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<RadioButtonType>Auto</RadioButtonType>
 			<ContextMenu name="ВидСделкиКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="ВидСделкиРасширеннаяПодсказка" id="12"/>
 		</RadioButtonField>
-		<InputField name="Портфель" id="7">
-			<DataPath>Объект.Портфель</DataPath>
+		<InputField name="Счет" id="7">
+			<DataPath>Объект.Счет</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="ПортфельКонтекстноеМеню" id="8"/>
-			<ExtendedTooltip name="ПортфельРасширеннаяПодсказка" id="9"/>
+			<ContextMenu name="СчетКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="СчетРасширеннаяПодсказка" id="9"/>
 		</InputField>
 		<UsualGroup name="ГруппаВалюта" id="79">
 			<Title>
@@ -140,7 +145,7 @@
 			<ExtendedTooltip name="ГруппаВалютаРасширеннаяПодсказка" id="80"/>
 			<ChildItems>
 				<InputField name="ВалютаСделки" id="81">
-					<DataPath>Объект.ВалютаСделки</DataPath>
+					<DataPath>1/0:a1698c56-a49e-475c-8c81-9da177c04285</DataPath>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ВалютаСделкиКонтекстноеМеню" id="82"/>
 					<ExtendedTooltip name="ВалютаСделкиРасширеннаяПодсказка" id="83"/>
@@ -149,7 +154,7 @@
 					</Events>
 				</InputField>
 				<InputField name="КурсСделки" id="84">
-					<DataPath>Объект.КурсСделки</DataPath>
+					<DataPath>1/0:05506559-8dbf-4a0f-bfdf-c38fec2bdfb7</DataPath>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="КурсСделкиКонтекстноеМеню" id="85"/>
 					<ExtendedTooltip name="КурсСделкиРасширеннаяПодсказка" id="86"/>
@@ -157,7 +162,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<InputField name="СтратегияСделки" id="13">
-			<DataPath>Объект.СтратегияСделки</DataPath>
+			<DataPath>1/0:cbe65d73-9692-440e-97aa-05fb69e8b57d</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="СтратегияСделкиКонтекстноеМеню" id="14"/>
@@ -265,6 +270,13 @@
 						<Event name="OnChange">ПозицииЦенаПриИзменении</Event>
 					</Events>
 				</InputField>
+				<InputField name="ПозицииВалюта" id="89">
+					<DataPath>Объект.Позиции.Валюта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ПозицииВалютаКонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="ПозицииВалютаРасширеннаяПодсказка" id="91"/>
+				</InputField>
 				<InputField name="ПозицииСуммаСделки" id="50">
 					<DataPath>Объект.Позиции.СуммаСделки</DataPath>
 					<ReadOnly>true</ReadOnly>
@@ -282,18 +294,11 @@
 				</InputField>
 				<InputField name="ПозицииКомиссия" id="47">
 					<DataPath>Объект.Позиции.Комиссия</DataPath>
+					<Visible>false</Visible>
 					<EditMode>EnterOnInput</EditMode>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<ContextMenu name="ПозицииКомиссияКонтекстноеМеню" id="48"/>
 					<ExtendedTooltip name="ПозицииКомиссияРасширеннаяПодсказка" id="49"/>
-				</InputField>
-				<InputField name="ПозицииПрибыль" id="65">
-					<DataPath>Объект.Позиции.Прибыль</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<EditMode>EnterOnInput</EditMode>
-					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
-					<ContextMenu name="ПозицииПрибыльКонтекстноеМеню" id="66"/>
-					<ExtendedTooltip name="ПозицииПрибыльРасширеннаяПодсказка" id="67"/>
 				</InputField>
 			</ChildItems>
 		</Table>
@@ -422,4 +427,21 @@
 			</dcsset:item>
 		</ConditionalAppearance>
 	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьПоДаннымИмпорта" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по данным импорта</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по данным импорта</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоДаннымИмпорта</Action>
+		</Command>
+	</Commands>
 </Form>

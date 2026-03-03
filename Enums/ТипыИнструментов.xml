@@ -120,11 +120,11 @@
 			</EnumValue>
 			<EnumValue uuid="ba9cd5d5-2d71-4a9d-8b8d-4f02fec957b4">
 				<Properties>
-					<Name>ETF</Name>
+					<Name>ФондETF</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ETF</v8:content>
+							<v8:content>Фонд (ETF/БПИФ)</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -137,6 +137,90 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Валюта</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="fb356da4-15ea-4210-8c86-7eff8caea27c">
+				<Properties>
+					<Name>Фьючерс</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Фьючерс</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="10bb865e-a3dd-4b70-a888-84dd800ea1d4">
+				<Properties>
+					<Name>СтруктурныйПродукт</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Структурный продукт</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8ba00a08-7e88-44c5-aaac-9fcbe5d1bcdd">
+				<Properties>
+					<Name>Опцион</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Опцион</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="05c0efbd-262c-4154-a0b5-a9a8de14b14c">
+				<Properties>
+					<Name>КлиринговыйСертификат</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиринговый сертификат</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="1afcf3f6-a791-46a6-ac80-1d20475508fa">
+				<Properties>
+					<Name>Индекс</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индекс</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="f9c3e907-2530-44cf-80e4-4933f5c7a8e4">
+				<Properties>
+					<Name>Товар</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Товар</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="8108c229-ec73-4c83-9cfd-8e5900546b83">
+				<Properties>
+					<Name>Неопределено</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Неопределено</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

@@ -126,25 +126,15 @@
 					<ContextMenu name="НомерКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="21"/>
 				</LabelField>
-				<LabelField name="Портфель" id="39">
-					<DataPath>Список.Портфель</DataPath>
-					<ContextMenu name="ПортфельКонтекстноеМеню" id="40"/>
-					<ExtendedTooltip name="ПортфельРасширеннаяПодсказка" id="41"/>
+				<LabelField name="Счет" id="39">
+					<DataPath>Список.Счет</DataPath>
+					<ContextMenu name="СчетКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="СчетРасширеннаяПодсказка" id="41"/>
 				</LabelField>
 				<LabelField name="ВидСделки" id="22">
-					<DataPath>Список.ВидСделки</DataPath>
+					<DataPath>~Список.ВидСделки</DataPath>
 					<ContextMenu name="ВидСделкиКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="ВидСделкиРасширеннаяПодсказка" id="24"/>
-				</LabelField>
-				<LabelField name="Описание" id="36">
-					<DataPath>Список.Описание</DataPath>
-					<ContextMenu name="ОписаниеКонтекстноеМеню" id="37"/>
-					<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="38"/>
-				</LabelField>
-				<LabelField name="СтратегияСделки" id="25">
-					<DataPath>Список.СтратегияСделки</DataPath>
-					<ContextMenu name="СтратегияСделкиКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="СтратегияСделкиРасширеннаяПодсказка" id="27"/>
 				</LabelField>
 			</ChildItems>
 		</Table>

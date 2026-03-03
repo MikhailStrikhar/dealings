@@ -301,11 +301,11 @@
 			</Resource>
 			<Dimension uuid="ef8c0186-8db7-4eb0-9dd5-dd0e31ebca41">
 				<Properties>
-					<Name>Портфель</Name>
+					<Name>Счет</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Портфель</v8:content>
+							<v8:content>Счет</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

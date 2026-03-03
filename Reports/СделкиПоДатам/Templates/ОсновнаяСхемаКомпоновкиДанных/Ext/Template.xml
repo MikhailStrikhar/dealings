@@ -7,10 +7,6 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>Запрос</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Портфель</dataPath>
-			<field>Портфель</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Инструмент</dataPath>
 			<field>Инструмент</field>
 		</field>
@@ -97,9 +93,19 @@
 				</dcscor:item>
 			</appearance>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счет</dataPath>
+			<field>Счет</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ФинансовыеРезультатыПоСделкам.Портфель КАК Портфель,
+	ФинансовыеРезультатыПоСделкам.Счет КАК Счет,
 	ФинансовыеРезультатыПоСделкам.Инструмент КАК Инструмент,
 	ФинансовыеРезультатыПоСделкам.СтратегияСделки КАК СтратегияСделки,
 	ФинансовыеРезультатыПоСделкам.Период КАК Период,
@@ -177,7 +183,7 @@
 					<dcsset:field>СтратегияСделки</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Портфель</dcsset:field>
+					<dcsset:field>Счет</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Инструмент</dcsset:field>

@@ -7,13 +7,6 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>ЗапросПоОстаткам</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Портфель</dataPath>
-			<field>Портфель</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Инструмент</dataPath>
 			<field>Инструмент</field>
 			<role>
@@ -134,9 +127,26 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Счет</dataPath>
+			<field>Счет</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Платформа</dataPath>
+			<field>Платформа</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Платформа</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПозицииИнструментовОстатки.Портфель КАК Портфель,
+	ПозицииИнструментовОстатки.Счет КАК Счет,
 	ПозицииИнструментовОстатки.Инструмент КАК Инструмент,
 	ВЫБОР
 		КОГДА ПозицииИнструментовОстатки.КоличествоОстаток = 0
@@ -150,10 +160,10 @@
 			ТОГДА НЕОПРЕДЕЛЕНО
 		ИНАЧЕ ТекущиеЦеныСрезПоследних.Цена
 	КОНЕЦ КАК ПоследняяЦена,
-	//ДОБАВИТЬКДАТЕ(ТекущиеЦеныСрезПоследних.Период, ЧАС, 5) КАК ДатаЦены,
-	естьnull(ТекущиеЦеныСрезПоследних.Период, ДатаВремя(1,1,1)) КАК ДатаЦены,
+	ЕСТЬNULL(ТекущиеЦеныСрезПоследних.Период, ДАТАВРЕМЯ(1, 1, 1)) КАК ДатаЦены,
 	ПозицииИнструментовОстатки.КоличествоОстаток * ЕСТЬNULL(ТекущиеЦеныСрезПоследних.Цена, 0) КАК ТекущаяСтоимость,
-	ПозицииИнструментовОстатки.КоличествоОстаток * ЕСТЬNULL(ТекущиеЦеныСрезПоследних.Цена, 0) - ПозицииИнструментовОстатки.СтоимостьОстаток КАК PnL
+	ПозицииИнструментовОстатки.КоличествоОстаток * ЕСТЬNULL(ТекущиеЦеныСрезПоследних.Цена, 0) - ПозицииИнструментовОстатки.СтоимостьОстаток КАК PnL,
+	ПозицииИнструментовОстатки.Счет.Платформа КАК Платформа
 ИЗ
 	РегистрНакопления.ПозицииИнструментов.Остатки КАК ПозицииИнструментовОстатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ТекущиеЦены.СрезПоследних КАК ТекущиеЦеныСрезПоследних
@@ -169,10 +179,6 @@
 			</v8:item>
 		</title>
 	</calculatedField>
-	<totalField>
-		<dataPath>КоличествоОстаток</dataPath>
-		<expression>Сумма(КоличествоОстаток)</expression>
-	</totalField>
 	<totalField>
 		<dataPath>СтоимостьОстаток</dataPath>
 		<expression>Сумма(СтоимостьОстаток)</expression>
@@ -227,7 +233,10 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Портфель</dcsset:field>
+					<dcsset:field>Платформа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Счет</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Инструмент</dcsset:field>
@@ -322,7 +331,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Портфель</dcsset:field>
+						<dcsset:field>Платформа</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -336,12 +345,29 @@
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Счет</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
 					<dcsset:order>
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>

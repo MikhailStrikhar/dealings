@@ -83,7 +83,7 @@
 		<query>ВЫБРАТЬ
 	ФинансовыеРезультатыПоСделкамОбороты.Период КАК Период,
 	ФинансовыеРезультатыПоСделкамОбороты.Регистратор КАК Регистратор,
-	ФинансовыеРезультатыПоСделкамОбороты.Портфель КАК Портфель,
+	ФинансовыеРезультатыПоСделкамОбороты.Счет КАК Счет,
 	ФинансовыеРезультатыПоСделкамОбороты.Инструмент КАК Инструмент,
 	ФинансовыеРезультатыПоСделкамОбороты.СтратегияСделки КАК СтратегияСделки,
 	ФинансовыеРезультатыПоСделкамОбороты.ВыручкаОборот КАК ВыручкаОборот,
@@ -101,7 +101,7 @@
 		ИНАЧЕ 0
 	КОНЕЦ КАК PnLМинус
 ИЗ
-	РегистрНакопления.ФинансовыеРезультатыПоСделкам.Обороты(, , Регистратор, {(Портфель = &amp;Портфель)}) КАК ФинансовыеРезультатыПоСделкамОбороты</query>
+	РегистрНакопления.ФинансовыеРезультатыПоСделкам.Обороты(, , Регистратор, {(Счет = &amp;Счет)}) КАК ФинансовыеРезультатыПоСделкамОбороты</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>PnLИтого</dataPath>
@@ -178,7 +178,7 @@
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Прибыльных сделок</v8:content>
+				<v8:content>Прибыльных сделок (Win rate)</v8:content>
 			</v8:item>
 		</title>
 	</calculatedField>
@@ -243,6 +243,100 @@
 			</v8:item>
 		</title>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>ProfitFactor</dataPath>
+		<expression>Сумма(ВЫБОР
+        КОГДА ПрибыльУбытокОборот &gt; 0
+            ТОГДА ПрибыльУбытокОборот
+        ИНАЧЕ 0
+    КОНЕЦ)
+/
+Сумма(
+ВЫБОР
+        КОГДА ПрибыльУбытокОборот &lt; 0
+            ТОГДА ПрибыльУбытокОборот
+        ИНАЧЕ 1
+    КОНЕЦ)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Profit factor</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>AvgWin</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Avg win</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>AvgLoss</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Avg loss</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>CumulatePnL</dataPath>
+		<expression>ПрибыльУбытокОборот</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Cumulate pn L</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>МаксимальнаяПросадка</dataPath>
+		<expression/>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Максимальная просадка</v8:content>
+			</v8:item>
+		</title>
+	</calculatedField>
 	<totalField>
 		<dataPath>КоличествоСделок</dataPath>
 		<expression>Количество(Регистратор)</expression>
@@ -281,6 +375,22 @@
 	<totalField>
 		<dataPath>УбытокСумма</dataPath>
 		<expression>Сумма(PnLМинус)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ProfitFactor</dataPath>
+		<expression>(ProfitFactor)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>AvgWin</dataPath>
+		<expression>Сумма(PnLПлюс) / Сумма(PnLПоложительный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>AvgLoss</dataPath>
+		<expression>Сумма(PnLМинус) / Сумма(PnLОтрицательный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>МаксимальнаяПросадка</dataPath>
+		<expression>Выбор Когда Минимум(ПрибыльУбытокОборот) &lt; 0 Тогда Минимум(ПрибыльУбытокОборот) Иначе 0 Конец</expression>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -339,13 +449,16 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>Портфель</name>
+		<name>Счет</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Портфель</v8:content>
+				<v8:content>Счет</v8:content>
 			</v8:item>
 		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Счета</v8:Type>
+		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
@@ -367,6 +480,18 @@
 					<dcsset:field>УбыточныхСделок</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AvgWin</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>AvgLoss</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПрибыльСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УбытокСумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>PnLИтого</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -376,20 +501,21 @@
 					<dcsset:field>КомиссияИтого</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ПрибыльСумма</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>УбытокСумма</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ПроцентПрибыльных</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ProfitFactor</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МаксимальнаяПросадка</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Портфель</dcscor:parameter>
+					<dcscor:parameter>Счет</dcscor:parameter>
 					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>5ec8f0e5-398c-4df1-b845-4e9d21ffb0c9</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:order>

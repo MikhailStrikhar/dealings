@@ -106,17 +106,50 @@
 						<Event name="OnChange">ДатаПриИзменении</Event>
 					</Events>
 				</InputField>
+				<LabelField name="OperationId" id="87">
+					<DataPath>Объект.OperationId</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<TextColor>style:ИзмененноеЗначениеРеквизитаЦвет</TextColor>
+					<Font ref="style:NormalTextFont" bold="false" italic="true" underline="false" strikeout="false" kind="StyleItem" scale="100"/>
+					<ContextMenu name="OperationIdКонтекстноеМеню" id="88"/>
+					<ExtendedTooltip name="OperationIdРасширеннаяПодсказка" id="89"/>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
-		<RadioButtonField name="ВидСделки" id="10">
-			<DataPath>Объект.ВидСделки</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<RadioButtonType>Auto</RadioButtonType>
-			<ContextMenu name="ВидСделкиКонтекстноеМеню" id="11"/>
-			<ExtendedTooltip name="ВидСделкиРасширеннаяПодсказка" id="12"/>
-		</RadioButtonField>
+		<UsualGroup name="ГруппаВидСделки" id="90">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид сделки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа вид сделки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидСделкиРасширеннаяПодсказка" id="91"/>
+			<ChildItems>
+				<RadioButtonField name="ВидСделки" id="10">
+					<DataPath>Объект.ВидСделки</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ContextMenu name="ВидСделкиКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВидСделкиРасширеннаяПодсказка" id="12"/>
+				</RadioButtonField>
+				<CheckBoxField name="Шорт" id="92">
+					<DataPath>Объект.Шорт</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ШортКонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="ШортРасширеннаяПодсказка" id="94"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="Портфель" id="7">
-			<DataPath>Объект.Портфель</DataPath>
+			<DataPath>Объект.Счет</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="ПортфельКонтекстноеМеню" id="8"/>
@@ -160,6 +193,7 @@
 			<DataPath>Объект.СтратегияСделки</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
 			<ContextMenu name="СтратегияСделкиКонтекстноеМеню" id="14"/>
 			<ExtendedTooltip name="СтратегияСделкиРасширеннаяПодсказка" id="15"/>
 		</InputField>
