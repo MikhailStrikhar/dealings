@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.mcp_Выполнение" id="233e28aa-b04f-48c4-bd45-6162cc60f504" configVersion="eacd7975dcfcb0a1e06a1586b6405c598c00b59d"/>
+		<Metadata name="CommonModule.mcp_Выполнение.Module" id="233e28aa-b04f-48c4-bd45-6162cc60f504.0" configVersion="a3d03f5fa72996c6dd3429cb55774fe9517dc64d"/>
+		<Metadata name="CommonModule.mcp_КонтейнерыПовтИсп" id="5be1d88b-fdaf-46cb-89e6-bdcdb13f1fdb" configVersion="b0dc062348645c8c0a1e3fef24338d21d2a52774"/>
+		<Metadata name="CommonModule.mcp_КонтейнерыПовтИсп.Module" id="5be1d88b-fdaf-46cb-89e6-bdcdb13f1fdb.0" configVersion="963ed6a32797438f915492cc1fbbcae560a1ce8c"/>
+		<Metadata name="CommonModule.mcp_Метаданные" id="42eb55ba-1829-4b2e-8970-7b3cd8ac0dd7" configVersion="6b57e85a7691045f416417153bfd5e954e3f5f66"/>
+		<Metadata name="CommonModule.mcp_Метаданные.Module" id="42eb55ba-1829-4b2e-8970-7b3cd8ac0dd7.0" configVersion="e736a9266d9f24d987d4bb437246c0ef3087c5fd"/>
+		<Metadata name="CommonModule.mcp_ОбщегоНазначения" id="70ca5e18-bee6-43f2-8159-4d8bfa0dbfb9" configVersion="afa04aecba13e28275648518051b228e6cdc5315"/>
+		<Metadata name="CommonModule.mcp_ОбщегоНазначения.Module" id="70ca5e18-bee6-43f2-8159-4d8bfa0dbfb9.0" configVersion="ead420a36f51c302d4fae3d34143cdbfed395e4a"/>
+		<Metadata name="CommonModule.mcp_Содержимое" id="12aeb564-db14-4130-acc1-94c4eb48e0c2" configVersion="443459406be0ea82080aa37cded92ed55fbedac0"/>
+		<Metadata name="CommonModule.mcp_Содержимое.Module" id="12aeb564-db14-4130-acc1-94c4eb48e0c2.0" configVersion="1c1b6ec5efae129bc2b5ba99567c715cea590fd1"/>
+		<Metadata name="Configuration.MCP_Сервер" id="471acdde-293c-497c-bd55-e6ab48d98dc4" configVersion="e876498a6c70cfa3443c3194dd35a83907f94e64"/>
+		<Metadata name="DataProcessor.mcp_ИнструментДанныеОКонфигурации" id="52aa5f6a-c9c8-450c-ac2e-9b1deab2e920" configVersion="322073241532408d632d9f6b37ce0d2d585da9ae"/>
+		<Metadata name="DataProcessor.mcp_ИнструментДанныеОКонфигурации.ManagerModule" id="52aa5f6a-c9c8-450c-ac2e-9b1deab2e920.2" configVersion="59da08ef7e413ed600c1089373f0f810b4aaae83"/>
+		<Metadata name="DataProcessor.mcp_ИнструментДанныеОКонфигурации.ObjectModule" id="52aa5f6a-c9c8-450c-ac2e-9b1deab2e920.0" configVersion="a4eaf3d1ae51cd9c779ec717153fd9385f278b03"/>
+		<Metadata name="DataProcessor.mcp_ИнструментыКод" id="adae9577-8f7d-4ab3-aa43-57379c7795a4" configVersion="01435239fe6429c6e25354846d961c22e559ebe3"/>
+		<Metadata name="DataProcessor.mcp_ИнструментыКод.ManagerModule" id="adae9577-8f7d-4ab3-aa43-57379c7795a4.2" configVersion="7e1312a3f9947480e3113b7af49bb99f986dc761"/>
+		<Metadata name="DataProcessor.mcp_ИнструментыКод.ObjectModule" id="adae9577-8f7d-4ab3-aa43-57379c7795a4.0" configVersion="2a3a0782c0f2c1d65b761d1dce00076a73a99b14"/>
+		<Metadata name="DataProcessor.mcp_РесурсКраткаяШпаргалка" id="f4cc0b03-5461-40e3-9e78-7e98bcb5d4c6" configVersion="16d40c00ffd09f11c6f0f4245388156d2d47c474"/>
+		<Metadata name="DataProcessor.mcp_РесурсКраткаяШпаргалка.ManagerModule" id="f4cc0b03-5461-40e3-9e78-7e98bcb5d4c6.2" configVersion="c2a8cf01f6245fed856f61e39d703590a36c1062"/>
+		<Metadata name="DataProcessor.mcp_РесурсКраткаяШпаргалка.Template.BSL_CheatSheet" id="372a3b9a-0ca1-4cac-bb7e-7ad13428d7fc" configVersion="24bd02a90d0fc026b2571d4bc718395657f2c257"/>
+		<Metadata name="DataProcessor.mcp_РесурсКраткаяШпаргалка.Template.BSL_CheatSheet.Template" id="372a3b9a-0ca1-4cac-bb7e-7ad13428d7fc.0" configVersion="f047dc4ef1e0f651ac736e5400e1069326346b77"/>
+		<Metadata name="DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка" id="31e7609b-629b-424a-924d-0b03f09ea071" configVersion="efaf790683c8ce3bddd7c9d25a79c320b2c206d8"/>
+		<Metadata name="DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка.ManagerModule" id="31e7609b-629b-424a-924d-0b03f09ea071.2" configVersion="6b6f9b5ed58bbcd4824c34d2b63b498055a67750"/>
+		<Metadata name="DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка.Template.syntax_1c" id="a359d1f5-54d7-4209-aacf-20fc12aace36" configVersion="23bcba46325c52451874f858734ef7b0a791e900"/>
+		<Metadata name="DataProcessor.mcp_РесурсОписаниеСинтаксисаВстроенногоЯзыка.Template.syntax_1c.Template" id="a359d1f5-54d7-4209-aacf-20fc12aace36.0" configVersion="a4fdbc85dc171d8acccb91939d72f5d21511489f"/>
+		<Metadata name="DataProcessor.mcp_РесурсыМетаданных" id="cf9cad65-a810-43b3-a6ba-b84919c34d97" configVersion="e0b8b994effa4a4964f3b34d8202529352a7456a"/>
+		<Metadata name="DataProcessor.mcp_РесурсыМетаданных.ManagerModule" id="cf9cad65-a810-43b3-a6ba-b84919c34d97.2" configVersion="8fe0fc0351c4075f11c4529e9c25e30725097f51"/>
+		<Metadata name="DataProcessor.mcp_РесурсыТест" id="5dbd1604-1960-4db6-b7c1-35d05101045e" configVersion="628fa694848a3d457074ce03b7c9a39e1fe78018"/>
+		<Metadata name="DataProcessor.mcp_РесурсыТест.ManagerModule" id="5dbd1604-1960-4db6-b7c1-35d05101045e.2" configVersion="b9d6ed29623903724bb01800f76207d9d74bff97"/>
+		<Metadata name="DataProcessor.mcp_УправлениеСервером" id="06a9aad8-a8ef-41ad-b436-427800876ce4" configVersion="2a35f99513af9f47ef93331a8a18b0749a74ded4"/>
+		<Metadata name="DataProcessor.mcp_УправлениеСервером.Form.Форма" id="2e01ea2b-aac1-46e4-9d4d-10455479dea5" configVersion="735e4c6d2c7e729d80c4f05696107b75941d4d11"/>
+		<Metadata name="DataProcessor.mcp_УправлениеСервером.Form.Форма.Form" id="2e01ea2b-aac1-46e4-9d4d-10455479dea5.0" configVersion="9ac74033e2b26f1c5b3fda93c748211335c9f141"/>
+		<Metadata name="DataProcessor.mcp_УправлениеСервером.ManagerModule" id="06a9aad8-a8ef-41ad-b436-427800876ce4.2" configVersion="61714c264efa34c6a683d942b9cb8e2c7cf5fa48"/>
+		<Metadata name="DataProcessor.mcp_УправлениеСервером.ObjectModule" id="06a9aad8-a8ef-41ad-b436-427800876ce4.0" configVersion="6f9c2bd81f18f7a51843aa8a9f35df2e17e1d5a3"/>
+		<Metadata name="HTTPService.mcp_APIBackend" id="824406f6-43a9-4e3e-960e-39a9eed432cb" configVersion="4d88042c3e1b12fc84da146509be83d917c743a4">
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.health" id="0f0973cc-bed9-4494-a3d6-274d79a3a5c9"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.rpc.Method.POST" id="71b655cd-93b3-427f-b531-709972c02d89"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.mcp" id="9292073a-3405-4d4f-ba9a-90a8d054f3ff"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.rpc" id="a669bf45-5a33-4e83-9605-448e3d5029ce"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.mcp.Method.POST" id="c6094c73-651e-4f90-9e4d-3ed3adbb4885"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.mcp.Method.GET" id="c9658ca3-90ac-43fa-9387-36a9b092b531"/>
+			<Metadata name="HTTPService.mcp_APIBackend.URLTemplate.health.Method.GET" id="e96ab3b0-15e1-4e28-b73f-7c853a4ebfe1"/>
+		</Metadata>
+		<Metadata name="HTTPService.mcp_APIBackend.Module" id="824406f6-43a9-4e3e-960e-39a9eed432cb.0" configVersion="10f3d5bc0f0ed3842114bdf1c48aaf9f02da87c9"/>
+		<Metadata name="Language.Русский" id="3934c8ff-fc70-4830-a011-1fe02d9fe553" configVersion="0b7960dbd61dfee9559b0fc6e77b35a3d272d906"/>
+		<Metadata name="Role.mcp_ОсновнаяРоль" id="b39cb348-412f-4c3d-b9f9-4374f9982f6c" configVersion="ef9661ad214f345f4e3603f4e0ed73c5a71c41e7"/>
+		<Metadata name="Subsystem.mcp_MCPСервер" id="72c96244-916c-4c57-b77c-415cd5212774" configVersion="f4851f249a75ab6e3fd3a8325a2e777263298509"/>
+		<Metadata name="Subsystem.mcp_MCPСервер.Subsystem.mcp_КонтейнерыИнструментов" id="41b9e681-c136-4c1a-865d-048761425ac7" configVersion="bd88cc0326b8e68e06daefa5a1509ebe00ff8a4d"/>
+		<Metadata name="Subsystem.mcp_MCPСервер.Subsystem.mcp_КонтейнерыПромптов" id="82261560-a50a-4495-9018-2bc8bdd1fd3c" configVersion="4723489dab061d107c46d827d976f18d11498889"/>
+		<Metadata name="Subsystem.mcp_MCPСервер.Subsystem.mcp_КонтейнерыРесурсов" id="df8b3865-5d1b-4994-832c-c69088412296" configVersion="31daa43584536c4ac002e18e9f1a5537695753bb"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

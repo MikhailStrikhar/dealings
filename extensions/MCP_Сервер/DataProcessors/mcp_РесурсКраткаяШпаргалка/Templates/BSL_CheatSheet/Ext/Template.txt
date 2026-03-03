@@ -1,0 +1,32 @@
+﻿# 1C BSL Canonical Patterns
+
+## Create Document
+
+```1c
+ДокОбъект = Документы.<Имя>.СоздатьДокумент();
+```
+
+Never use:
+```1c
+Документы.<Имя>.Создать();
+```
+
+## Add Row To Tabular Section
+
+```1c
+Стр = ДокОбъект.<ТабличнаяЧасть>.Добавить();
+```
+
+Never iterate empty tabular sections to add rows.
+
+## Write Document
+
+```1c
+ДокОбъект.Записать();
+```
+
+With posting:
+
+```1c
+ДокОбъект.Записать(РежимЗаписиДокумента.Проведение);
+```
