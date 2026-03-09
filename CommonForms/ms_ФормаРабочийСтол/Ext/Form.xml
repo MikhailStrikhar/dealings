@@ -66,8 +66,18 @@
 						<CommandName>CommonCommand.ms_ЗагрузитьОперации</CommandName>
 						<ExtendedTooltip name="ФормаОбщаяКомандаms_ЗагрузитьОперацииРасширеннаяПодсказка" id="24"/>
 					</Button>
+					<Button name="ФормаОбщаяКомандаЗагрузкаСвечей" id="29">
+						<Type>CommandBarButton</Type>
+						<CommandName>CommonCommand.ЗагрузкаСвечей</CommandName>
+						<ExtendedTooltip name="ФормаОбщаяКомандаЗагрузкаСвечейРасширеннаяПодсказка" id="30"/>
+					</Button>
 				</ChildItems>
 			</Popup>
+			<Button name="ФормаОбработкаРегламентныеИФоновыеЗаданияОткрыть" id="27">
+				<Type>CommandBarButton</Type>
+				<CommandName>DataProcessor.РегламентныеИФоновыеЗадания.StandardCommand.Open</CommandName>
+				<ExtendedTooltip name="ФормаОбработкаРегламентныеИФоновыеЗаданияОткрытьРасширеннаяПодсказка" id="28"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<ChildItems>

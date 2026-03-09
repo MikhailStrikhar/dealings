@@ -16,12 +16,14 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ИнтеграцияTInvest_СТАРЫЙ</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">34cac171-978b-47d6-a43e-ee38563a37dd</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.НастройкаАвторизацииAPI_</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Constant.СервисФинДанных</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИсторияЦенИнструментов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ИмпортДанныхБрокера</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ВременноеХранениеДанных</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузкаСвечей</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonCommand.ЗагрузкаСвечей</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
