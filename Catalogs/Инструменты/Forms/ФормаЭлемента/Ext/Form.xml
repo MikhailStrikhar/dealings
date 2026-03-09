@@ -22,19 +22,19 @@
 			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
 			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
 		</InputField>
-		<InputField name="Наименование" id="4">
-			<DataPath>Объект.Description</DataPath>
-			<EditMode>EnterOnInput</EditMode>
-			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
-			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
-			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
-		</InputField>
 		<InputField name="Тикер" id="7">
 			<DataPath>Объект.Тикер</DataPath>
 			<EditMode>EnterOnInput</EditMode>
 			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 			<ContextMenu name="ТикерКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="ТикерРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
 		</InputField>
 		<InputField name="ISIN" id="10">
 			<DataPath>Объект.ISIN</DataPath>

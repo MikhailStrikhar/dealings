@@ -32,11 +32,11 @@
 			</xr:ContainedObject>
 		</InternalInfo>
 		<Properties>
-			<Name>Сделки</Name>
+			<Name>Инвестиции</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сделки</v8:content>
+					<v8:content>Инвестиции</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -53,7 +53,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Role.ИнтерактивноеОткрытиеВнешнихОтчетовИОбработок</xr:Item>
 			</DefaultRoles>
 			<Vendor>Стрихарь Михаил</Vendor>
-			<Version>1.0.2.1</Version>
+			<Version>1.1.0.1</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>false</UseManagedFormInOrdinaryApplication>
@@ -257,7 +257,7 @@
 			<Subsystem>Администрирование</Subsystem>
 			<Subsystem>ПодключаемыеОтчетыИОбработки</Subsystem>
 			<Subsystem>СтандартныеПодсистемы</Subsystem>
-			<Subsystem>Операции</Subsystem>
+			<Subsystem>Сделкикики</Subsystem>
 			<StyleItem>ВажнаяНадписьШрифт</StyleItem>
 			<StyleItem>ГиперссылкаЦвет</StyleItem>
 			<StyleItem>ГруппаВариантовОтчетовВажнаяШрифт</StyleItem>
@@ -700,7 +700,7 @@
 			<CommonTemplate>ШтампЭлектроннойПодписиOfficeOpen</CommonTemplate>
 			<FilterCriterion>СвязанныеДокументы</FilterCriterion>
 			<CommonModule>GoogleПереводчик</CommonModule>
-			<CommonModule>ms_РаботаСREST</CommonModule>
+			<CommonModule>ИнтеграцияTInvest_СТАРЫЙ</CommonModule>
 			<CommonModule>АдминистрированиеКластера</CommonModule>
 			<CommonModule>АдминистрированиеКластераCOM</CommonModule>
 			<CommonModule>АдминистрированиеКластераCOMКлиентСервер</CommonModule>
@@ -763,7 +763,7 @@
 			<CommonModule>ОбновлениеИнформационнойБазыКлиент</CommonModule>
 			<CommonModule>ОбновлениеИнформационнойБазыКлиентПереопределяемый</CommonModule>
 			<CommonModule>ОбновлениеИнформационнойБазыПереопределяемый</CommonModule>
-			<CommonModule>ОбновлениеИнформационнойБазыСделки</CommonModule>
+			<CommonModule>ОбновлениеИнформационнойБазыИнвестиции</CommonModule>
 			<CommonModule>ОбновлениеИнформационнойБазыСлужебный</CommonModule>
 			<CommonModule>ОбновлениеИнформационнойБазыСлужебныйВызовСервера</CommonModule>
 			<CommonModule>ОбновлениеИнформационнойБазыСлужебныйПовтИсп</CommonModule>
@@ -882,6 +882,11 @@
 			<CommonModule>ЯндексПереводчик</CommonModule>
 			<CommonModule>ИнструментыБрокера</CommonModule>
 			<CommonModule>ДФИ</CommonModule>
+			<CommonModule>ИнтеграцияTInvestAPI</CommonModule>
+			<CommonModule>ИнтеграцияTInvestИмпортОпераций</CommonModule>
+			<CommonModule>ИнтеграцияTInvestНСИ</CommonModule>
+			<CommonModule>ИнтеграцияTInvestРыночныеДанные</CommonModule>
+			<CommonModule>ИнтеграцияTInvestСлужебный</CommonModule>
 			<CommonAttribute>КомментарийЯзык1</CommonAttribute>
 			<CommonAttribute>КомментарийЯзык2</CommonAttribute>
 			<CommonAttribute>НаименованиеЯзык1</CommonAttribute>
@@ -1066,6 +1071,7 @@
 			<CommonForm>ФормаВыбораШрифта</CommonForm>
 			<CommonForm>ФормаНастроекОтчета</CommonForm>
 			<CommonForm>ФормаОтчета</CommonForm>
+			<CommonForm>ФормаПолучитьСвечи</CommonForm>
 			<Catalog>Валюты</Catalog>
 			<Catalog>ВариантыОтчетов</Catalog>
 			<Catalog>ВерсииРасширений</Catalog>
@@ -1087,8 +1093,9 @@
 			<Catalog>ЯзыкиПечатныхФорм</Catalog>
 			<Catalog>Платформы</Catalog>
 			<Catalog>ВременноеХранениеДанных</Catalog>
-			<Document>Сделка</Document>
+			<Document>БиржеваяОперация</Document>
 			<Document>ВводНачальныхОстатков</Document>
+			<Document>Сделка</Document>
 			<Enum>ВариантыПериода</Enum>
 			<Enum>ВариантыПредставленияПериода</Enum>
 			<Enum>ТипыИнструментов</Enum>
@@ -1107,6 +1114,9 @@
 			<Enum>ФорматыСохраненияОтчетов</Enum>
 			<Enum>ЦветаЗаметок</Enum>
 			<Enum>СервисыПереводаТекста</Enum>
+			<Enum>ТаймфреймыСвечей</Enum>
+			<Enum>ВариантыИсточникаИнструментов</Enum>
+			<Enum>РежимыЗагрузкиСвечей</Enum>
 			<Report>ДвиженияДокумента</Report>
 			<Report>ДлительностьОтложенногоОбновления</Report>
 			<Report>ПользователиПоПодразделениям</Report>
@@ -1115,8 +1125,8 @@
 			<Report>УниверсальныйОтчет</Report>
 			<Report>УчастникиГруппПользователей</Report>
 			<Report>ПозицииНаДату</Report>
-			<Report>ФинРез</Report>
-			<Report>СделкиПоДатам</Report>
+			<Report>СводныйРеализованныйРезультат</Report>
+			<Report>РезультатыПродаж</Report>
 			<Report>Обороты</Report>
 			<Report>ЭффективностьСтратегий</Report>
 			<Report>Портфель</Report>
@@ -1136,6 +1146,7 @@
 			<DataProcessor>РекомендацияПоПовышениюСкоростиРаботы</DataProcessor>
 			<DataProcessor>ЗаполнитьUID_ДляИнструментовБезUID</DataProcessor>
 			<DataProcessor>ms_ЗагрузкаОпераций</DataProcessor>
+			<DataProcessor>ЗагрузкаСвечей</DataProcessor>
 			<InformationRegister>БезопасноеХранилищеДанных</InformationRegister>
 			<InformationRegister>БезопасноеХранилищеДанныхОбластейДанных</InformationRegister>
 			<InformationRegister>ВерсииПодсистем</InformationRegister>
@@ -1173,8 +1184,9 @@
 			<InformationRegister>ЗакрытыеСделки</InformationRegister>
 			<InformationRegister>СостояниеПозицииНеИспользуется</InformationRegister>
 			<InformationRegister>КэшПереводов</InformationRegister>
-			<InformationRegister>ТекущиеЦены</InformationRegister>
+			<InformationRegister>ИсторияЦенИнструментов</InformationRegister>
 			<InformationRegister>ИмпортДанныхБрокера</InformationRegister>
+			<InformationRegister>СвечиИнструментов</InformationRegister>
 			<AccumulationRegister>ПозицииИнструментов</AccumulationRegister>
 			<AccumulationRegister>ФинансовыеРезультатыПоСделкам</AccumulationRegister>
 		</ChildObjects>

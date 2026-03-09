@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Enum uuid="a6c93b57-e61d-4b6d-9e29-6c917c57606f">
+		<InternalInfo>
+			<xr:GeneratedType name="EnumRef.РежимыЗагрузкиСвечей" category="Ref">
+				<xr:TypeId>29138605-a652-45b6-895f-fd7a0b621ac0</xr:TypeId>
+				<xr:ValueId>29de7bcf-c0b6-4122-abd8-4b891ff4f49a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumManager.РежимыЗагрузкиСвечей" category="Manager">
+				<xr:TypeId>9d899d93-bc51-44e9-9e3a-53ff27a15343</xr:TypeId>
+				<xr:ValueId>6ff87064-2a74-49f7-9a2b-80fe9d32529b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="EnumList.РежимыЗагрузкиСвечей" category="List">
+				<xr:TypeId>5f53706d-7b4a-4e14-ad53-3a160c20a598</xr:TypeId>
+				<xr:ValueId>33026aa7-5133-4116-9625-ca8495c0cc95</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>РежимыЗагрузкиСвечей</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режимы загрузки свечей</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<Characteristics/>
+			<QuickChoice>true</QuickChoice>
+			<ChoiceMode>BothWays</ChoiceMode>
+			<DefaultListForm/>
+			<DefaultChoiceForm/>
+			<AuxiliaryListForm/>
+			<AuxiliaryChoiceForm/>
+			<ListPresentation/>
+			<ExtendedListPresentation/>
+			<Explanation/>
+			<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+		</Properties>
+		<ChildObjects>
+			<EnumValue uuid="61f78ad0-0968-4785-b709-8764accf61f3">
+				<Properties>
+					<Name>ПолнаяЗагрузка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полная загрузка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="b4143b15-bf97-4780-a575-bc0d0378e823">
+				<Properties>
+					<Name>Дозагрузка</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дозагрузка</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+			<EnumValue uuid="783d72e1-35e9-4586-9840-ae4bee5f165b">
+				<Properties>
+					<Name>ПерезагрузкаПериода</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перезагрузка периода</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+			</EnumValue>
+		</ChildObjects>
+	</Enum>
+</MetaDataObject>
