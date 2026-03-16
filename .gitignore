@@ -3,5 +3,6 @@
 *.cfe
 *.tmp
 *.bak
-.vscode/
 !**/Ext/ParentConfigurations/*.cf
+.vscode/*
+!.vscode/settings.json
