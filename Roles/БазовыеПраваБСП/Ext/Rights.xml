@@ -4,6 +4,17 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
+		<name>CommonAttribute.НаименованиеЯзык1</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Configuration.Инвестиции</name>
 		<right>
 			<name>MainWindowModeNormal</name>
@@ -62,6 +73,13 @@
 		</right>
 		<right>
 			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonForm.РегиональныеНастройки</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -159,6 +177,17 @@
 		<name>CommonForm.РедактированиеДокументаOfficeOpen</name>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>CommonAttribute.НаименованиеЯзык2</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -274,6 +303,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonForm.ВводНаРазныхЯзыках</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>CommonForm.Вопрос</name>
 		<right>
 			<name>View</name>
@@ -319,6 +355,17 @@
 	</object>
 	<object>
 		<name>Constant.ОсновнойЯзык</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык1</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -408,6 +455,17 @@
 		<name>SessionParameter.ВерсияРасширений</name>
 		<right>
 			<name>Get</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -502,6 +560,17 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonAttribute.КомментарийЯзык1</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.ОсновнойЯзык</name>
 		<right>
 			<name>Get</name>
@@ -510,6 +579,17 @@
 	</object>
 	<object>
 		<name>CommonForm.СравнениеТабличныхДокументов</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
 		<right>
 			<name>View</name>
 			<value>true</value>
@@ -531,6 +611,17 @@
 	</object>
 	<object>
 		<name>InformationRegister.НастройкиКомандПечати</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.СервисПереводаТекста</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -799,6 +890,32 @@
 		</right>
 	</object>
 	<object>
+		<name>Catalog.ЯзыкиПечатныхФорм</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьСервисПереводаТекста</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.ИспользоватьРазделениеПоОбластямДанных</name>
 		<right>
 			<name>Read</name>
@@ -901,6 +1018,17 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonAttribute.КомментарийЯзык2</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.КаталогВременныхФайловДляLinux</name>
 		<right>
 			<name>Read</name>
@@ -956,6 +1084,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДополнительныйЯзык1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.УстановленныеРасширения</name>
 		<right>
 			<name>Get</name>
@@ -998,6 +1137,13 @@
 		</right>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.РаботаСВнешнимиРесурсамиЗаблокирована</name>
+		<right>
+			<name>Get</name>
 			<value>true</value>
 		</right>
 	</object>

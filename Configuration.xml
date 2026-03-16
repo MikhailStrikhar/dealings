@@ -286,6 +286,7 @@
 			<StyleItem>УдаленныйРеквизитФон</StyleItem>
 			<StyleItem>ФонРезультатовПоиска</StyleItem>
 			<StyleItem>ФонУправляющегоПоля</StyleItem>
+			<StyleItem>ЦветИзмененногоПоля</StyleItem>
 			<StyleItem>ЦветРазделаПанелиФункций</StyleItem>
 			<StyleItem>ЦветТекстаВнимание</StyleItem>
 			<StyleItem>ЦветТекстаОтрицательногоЗначения</StyleItem>
@@ -295,9 +296,9 @@
 			<StyleItem>ЦветФонаПоложительногоЗначения</StyleItem>
 			<StyleItem>ЦветФонаПредупреждения</StyleItem>
 			<StyleItem>ШрифтОченьКрупныйШрифтТекста</StyleItem>
-			<StyleItem>ЦветИзмененногоПоля</StyleItem>
 			<CommonPicture>АнализДанных48</CommonPicture>
 			<CommonPicture>БыстрыеНастройкиОтчета</CommonPicture>
+			<CommonPicture>БыстрыйДоступ</CommonPicture>
 			<CommonPicture>БыстрыйДоступДобавить</CommonPicture>
 			<CommonPicture>БыстрыйДоступСФлажком</CommonPicture>
 			<CommonPicture>БыстрыйДоступУдалить</CommonPicture>
@@ -485,7 +486,7 @@
 			<CommonPicture>Оформление</CommonPicture>
 			<CommonPicture>Ошибка32</CommonPicture>
 			<CommonPicture>Папка</CommonPicture>
-			<CommonPicture>БыстрыйДоступ</CommonPicture>
+			<CommonPicture>ПереводТекста</CommonPicture>
 			<CommonPicture>ПерейтиВПолноэкранныйРежим</CommonPicture>
 			<CommonPicture>ПереместитьВлевоВверх</CommonPicture>
 			<CommonPicture>ПереместитьВлевоВсе</CommonPicture>
@@ -637,7 +638,6 @@
 			<CommonPicture>ШтампЭлектроннойПодписи</CommonPicture>
 			<CommonPicture>ЭлектронноеПисьмо</CommonPicture>
 			<CommonPicture>УдалитьИнформация</CommonPicture>
-			<CommonPicture>ПереводТекста</CommonPicture>
 			<SessionParameter>АвторизованныйПользователь</SessionParameter>
 			<SessionParameter>БуферОбмена</SessionParameter>
 			<SessionParameter>ВерсияРасширений</SessionParameter>
@@ -925,8 +925,11 @@
 			<FunctionalOption>ИспользоватьВнешнихПользователей</FunctionalOption>
 			<FunctionalOption>ИспользоватьГруппыВнешнихПользователей</FunctionalOption>
 			<FunctionalOption>ИспользоватьГруппыПользователей</FunctionalOption>
+			<FunctionalOption>ИспользоватьДополнительныйЯзык1</FunctionalOption>
+			<FunctionalOption>ИспользоватьДополнительныйЯзык2</FunctionalOption>
 			<FunctionalOption>ИспользоватьЗаметки</FunctionalOption>
 			<FunctionalOption>ИспользоватьКомандуЗаметки</FunctionalOption>
+			<FunctionalOption>ИспользоватьСервисПереводаТекста</FunctionalOption>
 			<FunctionalOption>ОтложенноеОбновлениеВГлавномУзлеЗавершеноУспешно</FunctionalOption>
 			<FunctionalOption>ОтложенноеОбновлениеЗавершеноУспешно</FunctionalOption>
 			<FunctionalOption>РаботаВЛокальномРежиме</FunctionalOption>
@@ -935,9 +938,6 @@
 			<FunctionalOption>СтандартныеПодсистемыВАвтономномРежиме</FunctionalOption>
 			<FunctionalOption>СтандартныеПодсистемыВЛокальномРежиме</FunctionalOption>
 			<FunctionalOption>СтандартныеПодсистемыВМоделиСервиса</FunctionalOption>
-			<FunctionalOption>ИспользоватьДополнительныйЯзык1</FunctionalOption>
-			<FunctionalOption>ИспользоватьДополнительныйЯзык2</FunctionalOption>
-			<FunctionalOption>ИспользоватьСервисПереводаТекста</FunctionalOption>
 			<DefinedType>ВариантОбновляемогоОтчета</DefinedType>
 			<DefinedType>ВнешнийПользователь</DefinedType>
 			<DefinedType>ВнешнийПользовательОбъект</DefinedType>
@@ -975,18 +975,25 @@
 			<CommandGroup>Органайзер</CommandGroup>
 			<CommandGroup>Печать</CommandGroup>
 			<Constant>АдресПубликацииИнформационнойБазыВИнтернете</Constant>
+			<Constant>АдресПубликацииИнформационнойБазыВЛокальнойСети</Constant>
+			<Constant>ГлавныйУзел</Constant>
+			<Constant>ДанныеДляИзмененияМультиязычныхРеквизитов</Constant>
 			<Constant>ДетализироватьОбновлениеИБВЖурналеРегистрации</Constant>
+			<Constant>ДополнительныйЯзык1</Constant>
+			<Constant>ДополнительныйЯзык2</Constant>
+			<Constant>ДоставлятьСерверныеОповещенияБезСистемыВзаимодействия</Constant>
 			<Constant>ЗаголовокСистемы</Constant>
+			<Constant>ИдентификаторИнформационнойБазы</Constant>
 			<Constant>ИспользоватьАльтернативныйСерверДляЗагрузкиКурсовВалют</Constant>
 			<Constant>ИспользоватьВнешнихПользователей</Constant>
 			<Constant>ИспользоватьГруппыВнешнихПользователей</Constant>
 			<Constant>ИспользоватьГруппыПользователей</Constant>
-			<Constant>ИдентификаторИнформационнойБазы</Constant>
-			<Constant>АдресПубликацииИнформационнойБазыВЛокальнойСети</Constant>
+			<Constant>ИспользоватьДополнительныйЯзык1</Constant>
+			<Constant>ИспользоватьДополнительныйЯзык2</Constant>
 			<Constant>ИспользоватьЗаметки</Constant>
 			<Constant>ИспользоватьКомандуЗаметки</Constant>
 			<Constant>ИспользоватьРазделениеПоОбластямДанных</Constant>
-			<Constant>ДоставлятьСерверныеОповещенияБезСистемыВзаимодействия</Constant>
+			<Constant>ИспользоватьСервисПереводаТекста</Constant>
 			<Constant>ИспользоватьСервисСклоненияMorpher</Constant>
 			<Constant>КаталогВременныхФайловДляLinux</Constant>
 			<Constant>КаталогВременныхФайловДляWindows</Constant>
@@ -1004,21 +1011,14 @@
 			<Constant>ПорядокОбрабатываемыхДанных</Constant>
 			<Constant>РазрешитьДоступКИнтернетСервисам</Constant>
 			<Constant>РегистрироватьПоказателиСерверныхОповещений</Constant>
+			<Constant>СервисФинДанных</Constant>
 			<Constant>СведенияОБлокируемыхОбъектах</Constant>
 			<Constant>СведенияОбОбновленииИБ</Constant>
-			<Constant>ГлавныйУзел</Constant>
+			<Constant>СервисПереводаТекста</Constant>
 			<Constant>СостояниеОтправкиСерверныхОповещений</Constant>
 			<Constant>СтандартныеПодсистемыВАвтономномРежиме</Constant>
 			<Constant>УдалитьЛогинДоступаКСервисуMorpher</Constant>
 			<Constant>УдалитьНастройкиВходаПользователей</Constant>
-			<Constant>СервисФинДанных</Constant>
-			<Constant>ДанныеДляИзмененияМультиязычныхРеквизитов</Constant>
-			<Constant>ДополнительныйЯзык1</Constant>
-			<Constant>ДополнительныйЯзык2</Constant>
-			<Constant>ИспользоватьДополнительныйЯзык1</Constant>
-			<Constant>ИспользоватьДополнительныйЯзык2</Constant>
-			<Constant>ИспользоватьСервисПереводаТекста</Constant>
-			<Constant>СервисПереводаТекста</Constant>
 			<CommonForm>ms_ФормаВыбораИзТаблицы</CommonForm>
 			<CommonForm>ms_ФормаРабочийСтол</CommonForm>
 			<CommonForm>ms_ФормаСостояниеПортфеля</CommonForm>
@@ -1106,16 +1106,16 @@
 			<Enum>ПорядокОбработчиковОбновления</Enum>
 			<Enum>РежимыВыполненияОбработчиков</Enum>
 			<Enum>РежимыВыполненияОтложенныхОбработчиков</Enum>
+			<Enum>СервисыПереводаТекста</Enum>
 			<Enum>СпособыРедактированияЭлектронныхПисем</Enum>
 			<Enum>СпособыУстановкиКурсаВалюты</Enum>
-			<Enum>СтатусыОбработчиковОбновления</Enum>
 			<Enum>ВидыСделок</Enum>
+			<Enum>СтатусыОбработчиковОбновления</Enum>
 			<Enum>ТипыДанныхКэшаПрограммныхИнтерфейсов</Enum>
 			<Enum>ТипыОтчетов</Enum>
 			<Enum>ФорматыВыгрузкиОбъектов</Enum>
 			<Enum>ФорматыСохраненияОтчетов</Enum>
 			<Enum>ЦветаЗаметок</Enum>
-			<Enum>СервисыПереводаТекста</Enum>
 			<Enum>ТаймфреймыСвечей</Enum>
 			<Enum>ВариантыИсточникаИнструментов</Enum>
 			<Enum>РежимыЗагрузкиСвечей</Enum>
@@ -1157,6 +1157,7 @@
 			<InformationRegister>ИдентификаторыОбъектовВерсийРасширений</InformationRegister>
 			<InformationRegister>ИерархияГруппПользователей</InformationRegister>
 			<InformationRegister>КурсыВалют</InformationRegister>
+			<InformationRegister>КэшПереводов</InformationRegister>
 			<InformationRegister>КэшПрограммныхИнтерфейсов</InformationRegister>
 			<InformationRegister>НастройкиВариантовОтчетов</InformationRegister>
 			<InformationRegister>НастройкиКомандПечати</InformationRegister>
@@ -1181,11 +1182,10 @@
 			<InformationRegister>СнимкиОтчетов</InformationRegister>
 			<InformationRegister>СоставыГруппПользователей</InformationRegister>
 			<InformationRegister>ФиксацияОбработкиДанныхОбработчиками</InformationRegister>
-			<InformationRegister>УдалитьБезопасноеХранилищеДанныхОбластейДанных</InformationRegister>
 			<InformationRegister>КотировкиИнструментов</InformationRegister>
 			<InformationRegister>ЗакрытыеСделки</InformationRegister>
 			<InformationRegister>СостояниеПозицииНеИспользуется</InformationRegister>
-			<InformationRegister>КэшПереводов</InformationRegister>
+			<InformationRegister>УдалитьБезопасноеХранилищеДанныхОбластейДанных</InformationRegister>
 			<InformationRegister>ИсторияЦенИнструментов</InformationRegister>
 			<InformationRegister>ИмпортДанныхБрокера</InformationRegister>
 			<InformationRegister>СвечиИнструментов</InformationRegister>

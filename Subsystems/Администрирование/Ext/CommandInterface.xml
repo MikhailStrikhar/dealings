@@ -371,7 +371,7 @@
 				<xr:Common>false</xr:Common>
 			</Visibility>
 		</Command>
-		<Command name="0:4f0bda80-2246-43be-95f8-ae8480682cd5">
+		<Command name="0">
 			<Visibility>
 				<xr:Common>false</xr:Common>
 			</Visibility>
@@ -943,7 +943,7 @@
 		<Command name="DataProcessor.ЖурналРегистрации.StandardCommand.Open">
 			<CommandGroup>ActionsPanelTools</CommandGroup>
 		</Command>
-		<Command name="0:4f0bda80-2246-43be-95f8-ae8480682cd5">
+		<Command name="0">
 			<CommandGroup>ActionsPanelTools</CommandGroup>
 		</Command>
 		<Command name="DataProcessor.ЗагрузкаКурсовВалют.StandardCommand.Open">

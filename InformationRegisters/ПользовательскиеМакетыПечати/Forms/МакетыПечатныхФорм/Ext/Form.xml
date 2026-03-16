@@ -644,8 +644,16 @@
 					</ToolTip>
 					<ToolTipRepresentation>Balloon</ToolTipRepresentation>
 					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ПереводТекста</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</HeaderPicture>
 					<ShowInFooter>false</ShowInFooter>
 					<HorizontalStretch>false</HorizontalStretch>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ПереводТекста</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</ValuesPicture>
 					<ContextMenu name="МакетыДоступенПереводКонтекстноеМеню" id="177"/>
 					<ExtendedTooltip name="МакетыДоступенПереводРасширеннаяПодсказка" id="178"/>
 				</PictureField>

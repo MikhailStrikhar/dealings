@@ -110,6 +110,13 @@
 		</right>
 	</object>
 	<object>
+		<name>DataProcessor.РегламентныеИФоновыеЗадания.Command.РегламентныеИФоновыеЗадания</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.НастройкаПроксиСервера</name>
 		<right>
 			<name>Read</name>
@@ -125,6 +132,17 @@
 		</right>
 		<right>
 			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>DataProcessor.РегламентныеИФоновыеЗадания</name>
+		<right>
+			<name>Use</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -264,6 +282,25 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ВерсииПодсистем</name>
 		<right>
 			<name>Read</name>
@@ -382,6 +419,25 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.КоличествоПотоковДлительныхОпераций</name>
 		<right>
 			<name>Read</name>
@@ -402,6 +458,25 @@
 	</object>
 	<object>
 		<name>Constant.ИспользоватьАльтернативныйСерверДляЗагрузкиКурсовВалют</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ДополнительныйЯзык2</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -697,6 +772,25 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДанныеДляИзмененияМультиязычныхРеквизитов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.КаталогВременныхФайловДляWindows</name>
 		<right>
 			<name>Read</name>
@@ -898,6 +992,25 @@
 	</object>
 	<object>
 		<name>Constant.КаталогВременныхФайловДляLinux</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Update</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Edit</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ДополнительныйЯзык1</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>

@@ -273,7 +273,7 @@
 							<ChildItems>
 								<Button name="ОбработкаРегламентныеИФоновыеЗадания" id="1502">
 									<Type>Hyperlink</Type>
-									<CommandName>0</CommandName>
+									<CommandName>DataProcessor.РегламентныеИФоновыеЗадания.Command.РегламентныеИФоновыеЗадания</CommandName>
 									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
 									<ExtendedTooltip name="ОбработкаРегламентныеИФоновыеЗаданияРасширеннаяПодсказка" id="1645">
 										<Title formatted="false">

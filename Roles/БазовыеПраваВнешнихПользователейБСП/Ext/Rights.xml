@@ -55,6 +55,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonForm.РегиональныеНастройки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Constant.АдресПубликацииИнформационнойБазыВИнтернете</name>
 		<right>
 			<name>Read</name>
@@ -256,6 +263,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CommonForm.ВводНаРазныхЯзыках</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>CommonForm.Вопрос</name>
 		<right>
 			<name>View</name>
@@ -271,6 +285,17 @@
 	</object>
 	<object>
 		<name>Constant.ОсновнойЯзык</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык1</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -360,6 +385,17 @@
 		<name>SessionParameter.ВерсияРасширений</name>
 		<right>
 			<name>Get</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -488,6 +524,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДополнительныйЯзык2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>CommonForm.ПечатьДокументов</name>
 		<right>
 			<name>View</name>
@@ -496,6 +543,17 @@
 	</object>
 	<object>
 		<name>InformationRegister.НастройкиКомандПечати</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.СервисПереводаТекста</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -666,6 +724,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДанныеДляИзмененияМультиязычныхРеквизитов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.ПараметрыОбработчикаОбновления</name>
 		<right>
 			<name>Get</name>
@@ -721,6 +790,32 @@
 	</object>
 	<object>
 		<name>Constant.ИспользоватьЗаметки</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.ЯзыкиПечатныхФорм</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Constant.ИспользоватьСервисПереводаТекста</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>
@@ -877,6 +972,17 @@
 		</right>
 	</object>
 	<object>
+		<name>Constant.ДополнительныйЯзык1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>SessionParameter.УстановленныеРасширения</name>
 		<right>
 			<name>Get</name>
@@ -919,6 +1025,13 @@
 		</right>
 		<right>
 			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>SessionParameter.РаботаСВнешнимиРесурсамиЗаблокирована</name>
+		<right>
+			<name>Get</name>
 			<value>true</value>
 		</right>
 	</object>
